@@ -1,1 +1,1 @@
-Installed cors to the appilication for smooth functioning of the application.
+This is a password manager app where you can add, update or delete your passwords for various websites.
