@@ -16,7 +16,13 @@ const dbName = 'passop';
 const app = express();
 
 app.use(bodyParser.json());
-app.use(cors());
+app.use(cors(
+    {
+        origin: 'https://password-manager-frontend-peach.vercel.app/', 
+        methods: ['GET', 'POST', 'DELETE'],
+        credentials: true
+    }
+));
 
 client.connect().catch(err => console.error('MongoDB connection error:', err));
 
