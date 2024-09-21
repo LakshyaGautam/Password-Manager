@@ -7,7 +7,7 @@ const cors = require('cors');
 dotenv.config();
 
 // Connection URL
-const url = process.env.MONGO_URI; // Use an environment variable for the MongoDB URI
+const url = process.env.MONGODB_URI; // Use an environment variable for the MongoDB URI
 const client = new MongoClient(url);
 
 // Database Name
