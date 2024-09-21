@@ -7,7 +7,7 @@ const cors = require('cors')
 dotenv.config()
 
 // Connection URL
-const url = 'mongodb://localhost:27017';
+const url = 'mongodb://GoFood:mern123@cluster0-shard-00-00.x0jtu.mongodb.net:27017,cluster0-shard-00-01.x0jtu.mongodb.net:27017,cluster0-shard-00-02.x0jtu.mongodb.net:27017/passop?ssl=true&replicaSet=atlas-alokjy-shard-0&authSource=admin&retryWrites=true&w=majority&appName=Cluster0';
 const client = new MongoClient(url);
 
 // Database Name
@@ -46,5 +46,5 @@ app.delete('/', async (req, res) => {
 })
 
 app.listen(port, () => {
-    console.log('Example app listening on port http://localhost:${port}')
+    console.log('Example app listening to the port')
 })
