@@ -18,7 +18,7 @@ const app = express();
 app.use(bodyParser.json());
 app.use(cors(
     {
-        origin: 'https://password-manager-frontend-peach.vercel.app/', 
+        origin: 'https://password-manager-frontend-peach.vercel.app', 
         methods: ['GET', 'POST', 'DELETE'],
         credentials: true
     }
