@@ -11,7 +11,7 @@ const Manager = () => {
     const [passwordArray, setpasswordArray] = useState([])
 
     const getPasswords = async () => {
-        let req = await fetch("https://password-manager-six-green.vercel.app/")
+        let req = await fetch("https://password-manager-api-three.vercel.app/")
         let passwords = await req.json()
         console.log(passwords)
         setpasswordArray(passwords)
@@ -41,12 +41,12 @@ const Manager = () => {
             const id = form.id || uuidv4();
 
             if (form.id) {
-                await fetch("https://password-manager-six-green.vercel.app/", { method: "DELETE", headers: { "Content-type": "application/json" }, body: JSON.stringify({ id: form.id }) })
+                await fetch("https://password-manager-api-three.vercel.app/", { method: "DELETE", headers: { "Content-type": "application/json" }, body: JSON.stringify({ id: form.id }) })
             }
 
             const newPassword = { ...form, id };
 
-            let res = await fetch("https://password-manager-six-green.vercel.app/", { method: "POST", headers: { "Content-type": "application/json" }, body: JSON.stringify(newPassword) })
+            let res = await fetch("https://password-manager-api-three.vercel.app/", { method: "POST", headers: { "Content-type": "application/json" }, body: JSON.stringify(newPassword) })
 
             if (res.ok) {
                 setpasswordArray([...passwordArray, newPassword])
@@ -76,7 +76,7 @@ const Manager = () => {
             console.log("Deleting password with id", id);
             setpasswordArray(passwordArray.filter(item => item.id !== id))
             // localStorage.setItem("passwords", JSON.stringify(passwordArray.filter(item => item.id !== id)))
-            let res = await fetch("https://password-manager-six-green.vercel.app/", { method: "DELETE", headers: { "Content-type": "application/json" }, body: JSON.stringify({ id }) })
+            let res = await fetch("https://password-manager-api-three.vercel.app/", { method: "DELETE", headers: { "Content-type": "application/json" }, body: JSON.stringify({ id }) })
 
             if (res.ok) {
                 console.log("Password deleted successfully");
